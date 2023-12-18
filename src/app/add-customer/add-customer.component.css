@@ -1,0 +1,11 @@
+.form-element {
+  width: 500px;
+}
+
+.add-customer-container {
+  padding: 20px;
+}
+.add-card {
+  max-height: 424px;
+  max-width: 500px;
+}

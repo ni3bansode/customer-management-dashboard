@@ -1,0 +1,69 @@
+<div class="container add-customer-container">
+  <div>
+    <mat-card class="add-card">
+      <h3 style="text-align: center">{{ title }} Customers Data</h3>
+      <div [formGroup]="form">
+        <div>
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              formControlName="firstName"
+              class="form-control"
+              placeholder="First Name"
+              name="First Name"
+              required
+            />
+            <mat-error *ngIf="form.controls['firstName'].invalid">{{
+              getErrorMessage("firstName")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" />
+
+            <mat-error *ngIf="form.controls['lastName'].invalid">{{
+              getErrorMessage("lastName")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+
+            <mat-error *ngIf="form.controls['email'].invalid">{{
+              getErrorMessage("email")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="form-element">
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="number" formControlName="phoneNumber" />
+
+            <mat-error *ngIf="form.controls['phoneNumber'].invalid">{{
+              getErrorMessage("phoneNumber")
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <button
+            color="primary"
+            class="secondary-btn"
+            (click)="onFormSubmit()"
+            class="secondary-btn"
+            mat-button
+            [disabled]="form.invalid"
+            mat-raised-button
+          >
+            {{ title }}
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
